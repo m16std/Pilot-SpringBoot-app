@@ -13,26 +13,26 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class UserControllerTest {
+class UserControllerTest {
     @Autowired
     private UserController controller;
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void AddTest() throws Exception {
-        this.mockMvc.perform(get("/user/add?name=owo&age=18")).andDo(print()).andExpect(status().isOk());
+    void AddTest() throws Exception {
+        this.mockMvc.perform(get("/users/add?name=owo&age=0")).andDo(print()).andExpect(status().isOk());
     }
     @Test
-    public void GetAllTest() throws Exception {
-        this.mockMvc.perform(get("/user/get")).andDo(print()).andExpect(status().isOk());
+    void GetAllTest() throws Exception {
+        this.mockMvc.perform(get("/users/get")).andDo(print()).andExpect(status().isOk());
     }
     @Test
-    public void GetCurrentTest() throws Exception {
-        this.mockMvc.perform(get("/user/get/0")).andDo(print()).andExpect(status().isOk());
+    void GetCurrentTest() throws Exception {
+        this.mockMvc.perform(get("/users/get/0")).andDo(print()).andExpect(status().isOk());
     }
     @Test
-    public void DeleteTest() throws Exception {
-        this.mockMvc.perform(get("/user/delete/0")).andDo(print()).andExpect(status().isOk());
+    void DeleteTest() throws Exception {
+        this.mockMvc.perform(get("/users/delete/0")).andDo(print()).andExpect(status().isOk());
     }
 }

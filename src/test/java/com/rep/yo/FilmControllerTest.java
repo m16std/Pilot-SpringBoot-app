@@ -13,26 +13,26 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class FilmControllerTest {
+class FilmControllerTest {
     @Autowired
     private FilmController controller;
 
     @Autowired
     private MockMvc mockMvc;
     @Test
-    public void AddTest() throws Exception {
+    void AddTest() throws Exception {
         this.mockMvc.perform(get("/films/add?name=owo&country=owo&year=0")).andDo(print()).andExpect(status().isOk());
     }
     @Test
-    public void GetAllTest() throws Exception {
+    void GetAllTest() throws Exception {
         this.mockMvc.perform(get("/films/get")).andDo(print()).andExpect(status().isOk());
     }
     @Test
-    public void GetCurrentTest() throws Exception {
+    void GetCurrentTest() throws Exception {
         this.mockMvc.perform(get("/films/get/0")).andDo(print()).andExpect(status().isOk());
     }
     @Test
-    public void DeleteTest() throws Exception {
+    void DeleteTest() throws Exception {
         this.mockMvc.perform(get("/films/delete/0")).andDo(print()).andExpect(status().isOk());
     }
 

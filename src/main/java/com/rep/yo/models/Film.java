@@ -46,7 +46,7 @@ public class Film {
         this.name = name;
     }
 
-    public void setCountry(String name) {
+    public void setCountry(String country) {
         this.country = country;
     }
 
